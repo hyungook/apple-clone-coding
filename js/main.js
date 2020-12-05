@@ -1,3 +1,5 @@
+// 즉시 실행 함수  =  (function() {});
+// 전역변수 사용을 피하기 위해
 (() => {
 
 	let yOffset = 0; // window.pageYOffset 대신 쓸 변수
@@ -13,8 +15,8 @@
 		{
 			// 0
 			type: 'sticky',
-			heightNum: 5, // 브라우저 높이의 5배로 scrollHeight 세팅
-			scrollHeight: 0,
+			heightNum: 5, // // 브라우저 높이의 5배로 scrollHeight 세팅하겠다는 의미.
+			scrollHeight: 0,// 여기서 고정값으로 세팅할 수 있지만, 각 디바이스(화면) 사이즈 변경에도 대응해야해서 따로 함수 처리 사용
 			objs: {
 				container: document.querySelector('#scroll-section-0'),
 				messageA: document.querySelector('#scroll-section-0 .main-message.a'),
@@ -162,7 +164,7 @@
 			}
             sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
 		}
-
+		// console.log(sceneInfo);
 		yOffset = window.pageYOffset;
 
 		let totalScrollHeight = 0;
